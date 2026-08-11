@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Linq.Expressions;
 
 namespace primeiraProva
 {
@@ -48,21 +49,41 @@ namespace primeiraProva
             //define a query do banco de dados
             string queryBanco = "SELECT isAdmin FROM Employees WHERE Username = @usuario AND Password = @senha AND Username IS NOT NULL";
 
-            SqlCommand comando = new SqlCommand(queryBanco, conexao); //terminar de aprender no CLAUDE
+            SqlCommand comando = new SqlCommand(queryBanco, conexao); //quero executar um comandoBancoDeDados, com tal descrição e nessa conexão.
             //Para dar valor para @usuario e @senha, dependendo do que o usuario digitou
             comando.Parameters.AddWithValue("@usuario", txtUsuarioLogin.Text);
             comando.Parameters.AddWithValue("@senha", txtSenhaLogin.Text);
 
-            try {
+            try
+            {
                 //abre a conexão com o banco
                 conexao.Open();
-                SqlDataReader leitorDados = comando.ExecuteReader();//terminar de aprender no CLAUDE!
+                SqlDataReader leitorDados = comando.ExecuteReader();//mande o comando definido para o banco ler ele
 
                 if (leitorDados.Read())
                 {
-                    bool administrador = leitorDados.GetBoolean(leitorDados.GetOrdinal("isAdmin"));//ainda falta aprender no CLAUDE!
+                    MessageBox.Show($"Bem Vindo{txtUsuarioLogin.Text}");
+                    // [ ] é um indexador
+                    bool administrador = (bool)leitorDados["isAdmin"];
+                    //criar as telas para responsavel ou gerente com if/else
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou Senha Incorretos!");
                 }
             }
+            catch (Exception erroAoTentar)
+            {
+                //verifica se existe algum erro caso o try não rode
+                MessageBox.Show("Erro: " + (erroAoTentar.Message)); //precisa acompanhar "Message" pois o texto só precisa receber uma string, nao outras informacoes do erro
+
+            }
+            finally
+            {
+                conexao.Close();
+            }
+                
+            
         }
     }
 }
