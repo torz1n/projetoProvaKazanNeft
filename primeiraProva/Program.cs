@@ -1,4 +1,5 @@
-﻿using System;
+﻿using primeiraProva.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,20 @@ namespace primeiraProva
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmLogin());
+        }
+        public static DialogResult Warning(this string text)
+        {
+            return MessageBox.Show(text, "Kazan  - Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+        }
+        public static DialogResult Information(this string text)
+        {
+            return MessageBox.Show(text, "Kazan  - Information", MessageBoxButtons.OK, MessageBoxIcon.Information );
+        }
+        public static DialogResult Question(this string text)
+        {
+            return MessageBox.Show(text, "Kazan  - Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question );
         }
     }
+
 }
