@@ -85,5 +85,10 @@ namespace primeiraProva
                 
             
         }
+
+        private void botaoCancelarLogin_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

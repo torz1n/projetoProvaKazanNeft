@@ -34,7 +34,6 @@
             this.tituloSenhaLogin = new System.Windows.Forms.Label();
             this.botaoCancelarLogin = new System.Windows.Forms.Button();
             this.botaoConfirmarLogin = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // txtUsuarioLogin
@@ -81,6 +80,7 @@
             this.botaoCancelarLogin.TabIndex = 4;
             this.botaoCancelarLogin.Text = "Cancelar";
             this.botaoCancelarLogin.UseVisualStyleBackColor = false;
+            this.botaoCancelarLogin.Click += new System.EventHandler(this.botaoCancelarLogin_Click);
             // 
             // botaoConfirmarLogin
             // 
@@ -120,7 +120,6 @@
         private System.Windows.Forms.Label tituloSenhaLogin;
         private System.Windows.Forms.Button botaoCancelarLogin;
         private System.Windows.Forms.Button botaoConfirmarLogin;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
