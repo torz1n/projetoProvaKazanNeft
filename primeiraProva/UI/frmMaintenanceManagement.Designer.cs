@@ -94,9 +94,9 @@
             this.txtAvailableAssets.AutoSize = true;
             this.txtAvailableAssets.Location = new System.Drawing.Point(38, 48);
             this.txtAvailableAssets.Name = "txtAvailableAssets";
-            this.txtAvailableAssets.Size = new System.Drawing.Size(105, 16);
+            this.txtAvailableAssets.Size = new System.Drawing.Size(108, 16);
             this.txtAvailableAssets.TabIndex = 1;
-            this.txtAvailableAssets.Text = "Avaiable Assets";
+            this.txtAvailableAssets.Text = "Avaiable Assets:";
             this.txtAvailableAssets.Click += new System.EventHandler(this.txtAvailableAssets_Click);
             // 
             // btnSendEmergencyMaintenaneRequest
