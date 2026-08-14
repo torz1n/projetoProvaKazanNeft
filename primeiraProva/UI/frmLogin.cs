@@ -16,11 +16,12 @@ namespace primeiraProva.UI
         public frmLogin()
         {
             InitializeComponent();
+            this.Text = "Login";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var user = ctx.Employees.FirstOrDefault(b => b.Username == textBox1.Text && b.Password == textBox2.Text);
+            var user = ctx.Employees.FirstOrDefault(b => b.Username == txtUserLogin.Text && b.Password == z.Text);
 
             if (user == null)
             {

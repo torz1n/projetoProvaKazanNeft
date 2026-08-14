@@ -107,6 +107,7 @@
             this.btnSendEmergencyMaintenaneRequest.TabIndex = 2;
             this.btnSendEmergencyMaintenaneRequest.Text = "Send Emergency Maintenance Request";
             this.btnSendEmergencyMaintenaneRequest.UseVisualStyleBackColor = true;
+            this.btnSendEmergencyMaintenaneRequest.Click += new System.EventHandler(this.btnSendEmergencyMaintenaneRequest_Click);
             // 
             // frmMaintenanceManagement
             // 
