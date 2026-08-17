@@ -60,6 +60,7 @@
             this.dgvMaintenanceManagement.RowTemplate.Height = 24;
             this.dgvMaintenanceManagement.Size = new System.Drawing.Size(555, 274);
             this.dgvMaintenanceManagement.TabIndex = 0;
+            this.dgvMaintenanceManagement.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaintenanceManagement_CellContentClick);
             // 
             // AssetSN
             // 

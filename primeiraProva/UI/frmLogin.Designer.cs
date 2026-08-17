@@ -56,6 +56,7 @@
             this.btnOkLogin.TabIndex = 0;
             this.btnOkLogin.Text = "Ok";
             this.btnOkLogin.UseVisualStyleBackColor = true;
+            this.btnOkLogin.Click += new System.EventHandler(this.btnOkLogin_Click);
             // 
             // btnCancelLogin
             // 
