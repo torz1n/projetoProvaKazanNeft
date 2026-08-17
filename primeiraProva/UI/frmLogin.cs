@@ -45,15 +45,15 @@ namespace primeiraProva.UI
                     return;
                 }
 
-            bool administrador (isAdmin)
+            //bool administrador (isAdmin)
 
-                this.Hide();
-            if (user == administrador)
-            {
-                new frmManagement().Show();
-            }
-            else
-                new frmMaintenanceManagement().Show();
+            //    this.Hide();
+            //if (user == administrador)
+            //{
+            //    new frmManagement().Show();
+            //}
+            //else
+            //    new frmMaintenanceManagement().Show();
         }
     }
 }

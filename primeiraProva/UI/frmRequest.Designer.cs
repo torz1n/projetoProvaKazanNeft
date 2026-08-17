@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtAssetSN = new System.Windows.Forms.Label();
-            this.txtDepartmentRequest = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtAssetNameRequest = new System.Windows.Forms.Label();
             this.txtAssetSNRequest = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +45,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelRequest = new System.Windows.Forms.Button();
             this.btnSendRequest = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -60,10 +62,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtAssetSN);
-            this.groupBox1.Controls.Add(this.txtDepartmentRequest);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtAssetNameRequest);
             this.groupBox1.Controls.Add(this.txtAssetSNRequest);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -74,41 +76,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selected Asset";
             // 
-            // txtAssetSN
+            // label8
             // 
-            this.txtAssetSN.AutoSize = true;
-            this.txtAssetSN.Location = new System.Drawing.Point(145, 77);
-            this.txtAssetSN.Name = "txtAssetSN";
-            this.txtAssetSN.Size = new System.Drawing.Size(44, 16);
-            this.txtAssetSN.TabIndex = 7;
-            this.txtAssetSN.Text = "label4";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(145, 77);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 16);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "label8";
             // 
-            // txtDepartmentRequest
+            // label7
             // 
-            this.txtDepartmentRequest.AutoSize = true;
-            this.txtDepartmentRequest.Location = new System.Drawing.Point(579, 77);
-            this.txtDepartmentRequest.Name = "txtDepartmentRequest";
-            this.txtDepartmentRequest.Size = new System.Drawing.Size(44, 16);
-            this.txtDepartmentRequest.TabIndex = 6;
-            this.txtDepartmentRequest.Text = "label6";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(350, 77);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 16);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "label7";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(473, 77);
+            this.label5.Location = new System.Drawing.Point(506, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 16);
             this.label5.TabIndex = 5;
             this.label5.Text = "Department: ";
-            // 
-            // txtAssetNameRequest
-            // 
-            this.txtAssetNameRequest.AutoSize = true;
-            this.txtAssetNameRequest.Location = new System.Drawing.Point(330, 77);
-            this.txtAssetNameRequest.Name = "txtAssetNameRequest";
-            this.txtAssetNameRequest.Size = new System.Drawing.Size(44, 16);
-            this.txtAssetNameRequest.TabIndex = 4;
-            this.txtAssetNameRequest.Text = "label4";
             // 
             // txtAssetSNRequest
             // 
@@ -121,7 +115,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(237, 77);
+            this.label2.Location = new System.Drawing.Point(248, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 2;
@@ -222,11 +216,28 @@
             this.btnSendRequest.UseVisualStyleBackColor = true;
             this.btnSendRequest.Click += new System.EventHandler(this.button3_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(610, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 16);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "label9";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
             // frmRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(870, 654);
             this.Name = "frmRequest";
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -239,9 +250,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label txtDepartmentRequest;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label txtAssetNameRequest;
         private System.Windows.Forms.Label txtAssetSNRequest;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -254,6 +263,9 @@
         private System.Windows.Forms.Button btnCancelRequest;
         private System.Windows.Forms.Button btnSendRequest;
         private System.Windows.Forms.ComboBox comboBoxRequest;
-        private System.Windows.Forms.Label txtAssetSN;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
