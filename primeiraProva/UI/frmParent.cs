@@ -11,6 +11,16 @@ namespace primeiraProva.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            foreach (Control objectHere in this.Controls)
+            {
+                if (objectHere is ComboBox)
+                {
+                    ComboBox comboBoxes = (ComboBox)objectHere;
+                    comboBoxes.SelectedIndex = -1;
+                }
+            }
+            
         }
 
        public  Session2Entities ctx = new Session2Entities();

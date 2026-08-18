@@ -54,11 +54,11 @@
             this.AssetName,
             this.LastClosedEM,
             this.NumberOfEMs});
-            this.dgvMaintenanceManagement.Location = new System.Drawing.Point(41, 84);
+            this.dgvMaintenanceManagement.Location = new System.Drawing.Point(41, 118);
             this.dgvMaintenanceManagement.Name = "dgvMaintenanceManagement";
             this.dgvMaintenanceManagement.RowHeadersWidth = 51;
             this.dgvMaintenanceManagement.RowTemplate.Height = 24;
-            this.dgvMaintenanceManagement.Size = new System.Drawing.Size(555, 274);
+            this.dgvMaintenanceManagement.Size = new System.Drawing.Size(555, 215);
             this.dgvMaintenanceManagement.TabIndex = 0;
             this.dgvMaintenanceManagement.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMaintenanceManagement_CellContentClick);
             // 
@@ -93,7 +93,7 @@
             // txtAvailableAssets
             // 
             this.txtAvailableAssets.AutoSize = true;
-            this.txtAvailableAssets.Location = new System.Drawing.Point(38, 48);
+            this.txtAvailableAssets.Location = new System.Drawing.Point(38, 75);
             this.txtAvailableAssets.Name = "txtAvailableAssets";
             this.txtAvailableAssets.Size = new System.Drawing.Size(108, 16);
             this.txtAvailableAssets.TabIndex = 1;

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.btnCancelRequest = new System.Windows.Forms.Button();
             this.btnSendRequest = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -75,6 +75,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selected Asset";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(610, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 16);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "label9";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -205,6 +215,7 @@
             this.btnCancelRequest.TabIndex = 6;
             this.btnCancelRequest.Text = "button2";
             this.btnCancelRequest.UseVisualStyleBackColor = true;
+            this.btnCancelRequest.Click += new System.EventHandler(this.btnCancelRequest_Click);
             // 
             // btnSendRequest
             // 
@@ -221,16 +232,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(610, 77);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 16);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "label9";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // frmRequest
             // 

@@ -29,12 +29,12 @@ namespace primeiraProva.UI
 
             if (user == null)
             {
-                "usuario nao encontrado".Question();
+                "usuario nao encontrado".Information();
                 return;
             }
             this.Hide();
 
-            if (user.isAdmin == true)
+            if(user.isAdmin == true)
             {
                 new frmManagement().Show();
             }
@@ -42,6 +42,11 @@ namespace primeiraProva.UI
                 new frmMaintenanceManagement().Show();
         }
 
+        private void btnCancelLogin_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+        }
     }
     
 }

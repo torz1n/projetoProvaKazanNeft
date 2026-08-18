@@ -25,15 +25,15 @@ namespace primeiraProva
         private const string AppName = "Kazan";
         public static DialogResult Warning(this string text)
         {
-            return MessageBox.Show(text, $"(AppName) - Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return MessageBox.Show(text, $"{AppName} - Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
         public static DialogResult Information(this string text)
         {
-            return MessageBox.Show(text, $"(AppName)  - Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return MessageBox.Show(text, $"{AppName}  - Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public static DialogResult Question(this string text)
         {
-            return MessageBox.Show(text, $"(AppName)  - Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return MessageBox.Show(text, $"{AppName}  - Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
     }
  }
