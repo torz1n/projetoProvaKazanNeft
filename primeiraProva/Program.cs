@@ -18,7 +18,7 @@ namespace primeiraProva
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMaintenanceManagement());
+            Application.Run(new frmLogin());
         }
 
 

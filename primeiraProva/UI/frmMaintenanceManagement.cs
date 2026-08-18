@@ -27,16 +27,9 @@ namespace primeiraProva.UI
                 
 
                 dgvMaintenanceManagement.Rows[numberRow].Tag = asset;
+
+
             }
-
-            //dgvMaintenanceManagement.Columns["ID"].Visible = false;
-            //dgvMaintenanceManagement.Columns["EmployeeID"].Visible = false;
-            //dgvMaintenanceManagement.Columns["AssetGroupID"].Visible = false;
-            //dgvMaintenanceManagement.Columns["WarrantyDate"].Visible = false;
-            //dgvMaintenanceManagement.Columns["Description"].Visible = false;
-            //dgvMaintenanceManagement.Columns["DepartmentLocationID"].Visible = false;
-
-            //dgvMaintenanceManagement.DataSource = ctx.EmergencyMaintenances.ToList();//????
         }
 
         private void txtAvailableAssets_Click(object sender, EventArgs e)
@@ -48,11 +41,6 @@ namespace primeiraProva.UI
         {
             var linhaSelecionada = dgvMaintenanceManagement.SelectedRows[0];//inclui o numero da coluna e pega os valores da linha
             var SelectedAsset = linhaSelecionada.Tag as Asset;
-
-            //string valorAssetSN = linhaSelecionada.Cells["AssetSN"].Value.ToString();//pega o valores e envia pra outra tela por meio dos parametros
-            //string valorAssetName = linhaSelecionada.Cells["AssetName"].Value.ToString();
-            //string valorLastClosed = linhaSelecionada.Cells["LastClosedEM"].Value.ToString();
-            //string valorNumberOfEMs = linhaSelecionada.Cells["NumberOfEMs"].Value.ToString();
 
             new frmRequest(SelectedAsset).Show();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using primeiraProva.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ using System.Windows.Forms;
 
 namespace primeiraProva.UI
 {
+
+
     public partial class frmLogin : frmParent
     {
         public frmLogin()
@@ -20,7 +23,7 @@ namespace primeiraProva.UI
             this.Text = "Login";
         }
 
-        /*private void btn(object sender, EventArgs e)
+        private void btnOkLogin_Click(object sender, EventArgs e)
         {
             var user = ctx.Employees.FirstOrDefault(b => b.Username == txtUserLogin.Text && b.Password == z.Text);
 
@@ -29,31 +32,19 @@ namespace primeiraProva.UI
                 "usuario nao encontrado".Question();
                 return;
             }
+            this.Hide();
 
-            Hide();
-            new frmMaintenanceManagement().Show();
-        
-        }*/
-
-        private void btnOkLogin_Click(object sender, EventArgs e)
-        {
-                var user = ctx.Employees.FirstOrDefault(b => b.Username == txtUserLogin.Text && b.Password == z.Text);
-
-                if (user == null)
-                {
-                    "usuario nao encontrado".Question();
-                    return;
-                }
-
-            //bool administrador (isAdmin)
-
-            //    this.Hide();
-            //if (user == administrador)
-            //{
-            //    new frmManagement().Show();
-            //}
-            //else
-            //    new frmMaintenanceManagement().Show();
+            if (user.isAdmin == true)
+            {
+                new frmManagement().Show();
+            }
+            else
+                new frmMaintenanceManagement().Show();
         }
+
     }
+    
 }
+
+
+
