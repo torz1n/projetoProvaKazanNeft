@@ -30,14 +30,18 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dgvManagement = new System.Windows.Forms.DataGridView();
-            this.btnManageRequestManagement = new System.Windows.Forms.Button();
             this.AssetSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AssetName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RequestDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnManageRequestManagement = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManagement)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(1199, 602);
             // 
             // label1
             // 
@@ -61,17 +65,8 @@
             this.dgvManagement.Name = "dgvManagement";
             this.dgvManagement.RowHeadersWidth = 51;
             this.dgvManagement.RowTemplate.Height = 24;
-            this.dgvManagement.Size = new System.Drawing.Size(678, 294);
+            this.dgvManagement.Size = new System.Drawing.Size(706, 294);
             this.dgvManagement.TabIndex = 1;
-            // 
-            // btnManageRequestManagement
-            // 
-            this.btnManageRequestManagement.Location = new System.Drawing.Point(46, 401);
-            this.btnManageRequestManagement.Name = "btnManageRequestManagement";
-            this.btnManageRequestManagement.Size = new System.Drawing.Size(203, 26);
-            this.btnManageRequestManagement.TabIndex = 2;
-            this.btnManageRequestManagement.Text = "Manage Request";
-            this.btnManageRequestManagement.UseVisualStyleBackColor = true;
             // 
             // AssetSN
             // 
@@ -108,16 +103,30 @@
             this.Department.Name = "Department";
             this.Department.Width = 125;
             // 
+            // btnManageRequestManagement
+            // 
+            this.btnManageRequestManagement.Location = new System.Drawing.Point(46, 401);
+            this.btnManageRequestManagement.Name = "btnManageRequestManagement";
+            this.btnManageRequestManagement.Size = new System.Drawing.Size(203, 26);
+            this.btnManageRequestManagement.TabIndex = 2;
+            this.btnManageRequestManagement.Text = "Manage Request";
+            this.btnManageRequestManagement.UseVisualStyleBackColor = true;
+            this.btnManageRequestManagement.Click += new System.EventHandler(this.btnManageRequestManagement_Click);
+            // 
             // frmManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1199, 602);
             this.Controls.Add(this.btnManageRequestManagement);
             this.Controls.Add(this.dgvManagement);
             this.Controls.Add(this.label1);
             this.Name = "frmManagement";
             this.Text = "frmManagement";
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.dgvManagement, 0);
+            this.Controls.SetChildIndex(this.btnManageRequestManagement, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvManagement)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

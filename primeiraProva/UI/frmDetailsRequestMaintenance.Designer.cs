@@ -35,10 +35,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpDetailsCompletedOn = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dtpDetailsStartDate = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -53,6 +51,8 @@
             this.Action = new System.Windows.Forms.DataGridViewLinkColumn();
             this.btnSubmitDetails = new System.Windows.Forms.Button();
             this.btnCancelDetails = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -126,10 +126,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtpDetailsCompletedOn);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.dtpDetailsStartDate);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Location = new System.Drawing.Point(84, 94);
@@ -138,14 +138,6 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asset EM Report";
-            // 
-            // dtpDetailsCompletedOn
-            // 
-            this.dtpDetailsCompletedOn.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDetailsCompletedOn.Location = new System.Drawing.Point(468, 37);
-            this.dtpDetailsCompletedOn.Name = "dtpDetailsCompletedOn";
-            this.dtpDetailsCompletedOn.Size = new System.Drawing.Size(115, 22);
-            this.dtpDetailsCompletedOn.TabIndex = 12;
             // 
             // label11
             // 
@@ -164,14 +156,6 @@
             this.label10.Size = new System.Drawing.Size(69, 16);
             this.label10.TabIndex = 10;
             this.label10.Text = "Start Date:";
-            // 
-            // dtpDetailsStartDate
-            // 
-            this.dtpDetailsStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDetailsStartDate.Location = new System.Drawing.Point(83, 37);
-            this.dtpDetailsStartDate.Name = "dtpDetailsStartDate";
-            this.dtpDetailsStartDate.Size = new System.Drawing.Size(115, 22);
-            this.dtpDetailsStartDate.TabIndex = 9;
             // 
             // label9
             // 
@@ -304,6 +288,24 @@
             this.btnCancelDetails.Text = "Cancel";
             this.btnCancelDetails.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(489, 39);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 16);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "label12";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(89, 37);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 16);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "label13";
+            // 
             // frmDetailsRequestMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -355,11 +357,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtAmountDetails;
-        private System.Windows.Forms.DateTimePicker dtpDetailsCompletedOn;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DateTimePicker dtpDetailsStartDate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
     }
 }

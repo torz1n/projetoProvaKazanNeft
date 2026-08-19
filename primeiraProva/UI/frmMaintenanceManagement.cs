@@ -18,7 +18,6 @@ namespace primeiraProva.UI
             var assetsList = ctx.Assets.ToList();
             foreach (var asset in assetsList)
             {
-                // asset.EmergencyMaintenances = ctx.EmergencyMaintenances.where(b => b.asset.id == AssetID)
                 int numberClosedEMS = asset.EmergencyMaintenances.Where(b => b.EMEndDate != null).Count();
                 DateTime? lastClosedEMS = asset.EmergencyMaintenances.Max(b => b.EMEndDate);
                 string nameOfDepartment = asset.DepartmentLocation.Department.Name.ToString();
@@ -27,8 +26,6 @@ namespace primeiraProva.UI
                 
 
                 dgvMaintenanceManagement.Rows[numberRow].Tag = asset;
-
-
             }
         }
 

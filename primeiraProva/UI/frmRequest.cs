@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -32,7 +33,7 @@ namespace primeiraProva.UI
 
         private void itensComboBox()
         {
-            comboBoxRequest.DataSource = ctx.Priorities./*Select(x => x.Name).*/ToList();
+            comboBoxRequest.DataSource = ctx.Priorities.Select(x => x.Name).ToList();
             comboBoxRequest.SelectedIndex = -1;
         }
 
@@ -58,6 +59,33 @@ namespace primeiraProva.UI
                 "Informações inválidas ou não preenchidas!".Information();
                 return;
             }
+
+            var verificao = ctx.EmergencyMaintenances.Any(x => x.AssetID == selectedAsset.ID && x.EMEndDate == null);
+
+            if (verificao)
+            {
+                "Já existe uma solicitação aberta pra esse ativo!".Warning();
+                return;
+            }
+
+
+            EmergencyMaintenance emMaintenance = new EmergencyMaintenance();
+            emMaintenance.AssetID = selectedAsset.ID;
+            emMaintenance.DescriptionEmergency = txtDescriptionOfEmergency.Text;
+            emMaintenance.OtherConsiderations = txtOtherConsiderations.Text;
+            emMaintenance.EMReportDate = DateTime.Now.Date;
+            emMaintenance.EMStartDate = null;
+            emMaintenance.EMEndDate = null;
+            emMaintenance.EMTechnicianNote = null;
+            emMaintenance.PriorityID = ctx.Priorities.ToList().FirstOrDefault(x => x.Name == comboBoxRequest.SelectedItem.ToString()).ID;
+
+
+            ctx.EmergencyMaintenances.Add(emMaintenance);
+            ctx.SaveChanges();
+
+            "Solicitação Cadastrada com Sucesso".Information();
+            this.Close();
+
         }
 
         private void txtAssetSN_Click(object sender, EventArgs e)

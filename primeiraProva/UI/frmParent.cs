@@ -12,14 +12,7 @@ namespace primeiraProva.UI
             StartPosition = FormStartPosition.CenterScreen;
             FormBorderStyle = FormBorderStyle.FixedSingle;
 
-            foreach (Control objectHere in this.Controls)
-            {
-                if (objectHere is ComboBox)
-                {
-                    ComboBox comboBoxes = (ComboBox)objectHere;
-                    comboBoxes.SelectedIndex = -1;
-                }
-            }
+            
             
         }
 
@@ -27,7 +20,23 @@ namespace primeiraProva.UI
            
         private void frmParent_Load(object sender, EventArgs e)
         {
+            Metodo(panel1 as Control);
+        }
 
+        private void Metodo(Control control)
+        {
+            foreach (Control objectHere in control.Controls)
+            {
+                if (objectHere is ComboBox comboBoxes)
+                {
+                    comboBoxes.DropDownStyle = ComboBoxStyle.DropDownList;
+                }
+
+                if (objectHere.HasChildren)
+                {
+                    Metodo(objectHere);
+                }
+            }
         }
     }
 }
