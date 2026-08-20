@@ -35,13 +35,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpCompleted = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtAmountDetails = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxPartNameDetails = new System.Windows.Forms.ComboBox();
             this.btnAddToListDetails = new System.Windows.Forms.Button();
@@ -51,22 +53,24 @@
             this.Action = new System.Windows.Forms.DataGridViewLinkColumn();
             this.btnSubmitDetails = new System.Windows.Forms.Button();
             this.btnCancelDetails = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnCancelDetails);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.btnSubmitDetails);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Size = new System.Drawing.Size(800, 450);
+            this.panel1.Size = new System.Drawing.Size(854, 516);
             // 
             // label1
             // 
@@ -126,8 +130,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.dtpCompleted);
+            this.groupBox1.Controls.Add(this.dtpStart);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
@@ -138,6 +142,21 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asset EM Report";
+            // 
+            // dtpCompleted
+            // 
+            this.dtpCompleted.Location = new System.Drawing.Point(468, 37);
+            this.dtpCompleted.Name = "dtpCompleted";
+            this.dtpCompleted.Size = new System.Drawing.Size(200, 22);
+            this.dtpCompleted.TabIndex = 13;
+            // 
+            // dtpStart
+            // 
+            this.dtpStart.Location = new System.Drawing.Point(83, 35);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.ShowCheckBox = true;
+            this.dtpStart.Size = new System.Drawing.Size(200, 22);
+            this.dtpStart.TabIndex = 12;
             // 
             // label11
             // 
@@ -176,35 +195,35 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.numericUpDown4);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtAmountDetails);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.comboBoxPartNameDetails);
             this.groupBox2.Controls.Add(this.btnAddToListDetails);
             this.groupBox2.Controls.Add(this.dgvDetails);
             this.groupBox2.Location = new System.Drawing.Point(84, 260);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(687, 149);
+            this.groupBox2.Size = new System.Drawing.Size(687, 206);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Replacement Parts";
             // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(468, 22);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown4.TabIndex = 9;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(261, 23);
+            this.label8.Location = new System.Drawing.Point(404, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 16);
             this.label8.TabIndex = 5;
             this.label8.Text = "Amount: ";
             this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // txtAmountDetails
-            // 
-            this.txtAmountDetails.Location = new System.Drawing.Point(325, 20);
-            this.txtAmountDetails.Name = "txtAmountDetails";
-            this.txtAmountDetails.Size = new System.Drawing.Size(100, 22);
-            this.txtAmountDetails.TabIndex = 4;
             // 
             // label7
             // 
@@ -221,13 +240,13 @@
             this.comboBoxPartNameDetails.FormattingEnabled = true;
             this.comboBoxPartNameDetails.Location = new System.Drawing.Point(92, 21);
             this.comboBoxPartNameDetails.Name = "comboBoxPartNameDetails";
-            this.comboBoxPartNameDetails.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxPartNameDetails.Size = new System.Drawing.Size(294, 24);
             this.comboBoxPartNameDetails.TabIndex = 2;
             this.comboBoxPartNameDetails.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnAddToListDetails
             // 
-            this.btnAddToListDetails.Location = new System.Drawing.Point(508, 20);
+            this.btnAddToListDetails.Location = new System.Drawing.Point(593, 23);
             this.btnAddToListDetails.Name = "btnAddToListDetails";
             this.btnAddToListDetails.Size = new System.Drawing.Size(75, 23);
             this.btnAddToListDetails.TabIndex = 1;
@@ -242,11 +261,11 @@
             this.PartName,
             this.Amount,
             this.Action});
-            this.dgvDetails.Location = new System.Drawing.Point(115, 68);
+            this.dgvDetails.Location = new System.Drawing.Point(46, 68);
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.RowHeadersWidth = 51;
             this.dgvDetails.RowTemplate.Height = 24;
-            this.dgvDetails.Size = new System.Drawing.Size(430, 53);
+            this.dgvDetails.Size = new System.Drawing.Size(582, 118);
             this.dgvDetails.TabIndex = 0;
             // 
             // PartName
@@ -272,7 +291,7 @@
             // 
             // btnSubmitDetails
             // 
-            this.btnSubmitDetails.Location = new System.Drawing.Point(255, 415);
+            this.btnSubmitDetails.Location = new System.Drawing.Point(255, 472);
             this.btnSubmitDetails.Name = "btnSubmitDetails";
             this.btnSubmitDetails.Size = new System.Drawing.Size(75, 23);
             this.btnSubmitDetails.TabIndex = 2;
@@ -281,38 +300,28 @@
             // 
             // btnCancelDetails
             // 
-            this.btnCancelDetails.Location = new System.Drawing.Point(434, 415);
+            this.btnCancelDetails.Location = new System.Drawing.Point(433, 472);
             this.btnCancelDetails.Name = "btnCancelDetails";
             this.btnCancelDetails.Size = new System.Drawing.Size(75, 23);
             this.btnCancelDetails.TabIndex = 8;
             this.btnCancelDetails.Text = "Cancel";
             this.btnCancelDetails.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // linkLabel1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(489, 39);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 16);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "label12";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(89, 37);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 16);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "label13";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(355, 94);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(68, 16);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "linkLabel1";
             // 
             // frmDetailsRequestMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCancelDetails);
-            this.Controls.Add(this.btnSubmitDetails);
+            this.ClientSize = new System.Drawing.Size(854, 516);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -322,14 +331,13 @@
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.groupBox2, 0);
-            this.Controls.SetChildIndex(this.btnSubmitDetails, 0);
-            this.Controls.SetChildIndex(this.btnCancelDetails, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -356,12 +364,13 @@
         private System.Windows.Forms.Button btnCancelDetails;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtAmountDetails;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DateTimePicker dtpCompleted;
+        private System.Windows.Forms.DateTimePicker dtpStart;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
     }
 }

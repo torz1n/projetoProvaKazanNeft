@@ -7,7 +7,7 @@ namespace primeiraProva.UI
 {
     public partial class frmDetailsRequestMaintenance : frmParent
     {
-        public frmDetailsRequestMaintenance(Asset selectedEM)
+        public frmDetailsRequestMaintenance(Asset selectedEM)//pegando o parametro que eu passei lá no outro form
         {
             InitializeComponent();
 
@@ -25,7 +25,49 @@ namespace primeiraProva.UI
             amount = changedparts
             action = link pra remover o que esta gravado na linha
              */
-            var startDate = ctx.EmergencyMaintenances.FirstOrDefault(x => x.AssetID == selectedEM.ID);
+            //var startDate = ctx.EmergencyMaintenances.FirstOrDefault(x => x.AssetID == selectedEM.ID);
+
+
+
+            //só ta pegando a data mais atual de 2019!! nao pega a de 2017!!!!!!!!!!!!!!!!!!!
+
+
+            //se a startDate for vazia
+            if (!dtpStart.Checked)
+            {
+                btnSubmitDetails.Enabled = false;
+            }
+
+            var techNote = selectedEM.EmergencyMaintenances.FirstOrDefault().EMTechnicianNote;
+            richTextBox1.Text = techNote;
+            if (richTextBox1.Text == string.Empty);
+            { 
+                dtpCompleted.Enabled = false;
+            }
+
+            var partName = ctx.Parts.Select(x => x.Name).ToList();//selectedEM.EmergencyMaintenances.FirstOrDefault().ChangedParts.FirstOrDefault().Part.Name.ToString();
+            comboBoxPartNameDetails.DataSource = partName;
+            if (partName == null)
+            {
+                comboBoxPartNameDetails.Text = string.Empty;
+            }
+
+            //amount dando problema!
+            var amount = ctx.ChangedParts.Select(x => x.Amount).ToList();
+            numericUpDown4.Text = amount.ToString();
+
+            //
+            
+            
+
+
+
+            
+
+            
+            
+
+
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -49,7 +91,7 @@ namespace primeiraProva.UI
 
         private void btnAddToListDetails_Click(object sender, EventArgs e)
         {
-
+            var adicionarLinhas = dgvDetails.Rows.Add(comboBoxPartNameDetails.Text, numericUpDown4.Text);
         }
 
         private void label5_Click(object sender, EventArgs e)

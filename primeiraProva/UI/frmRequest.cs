@@ -14,7 +14,7 @@ namespace primeiraProva.UI
 {
     public partial class frmRequest : frmParent
     {
-        private Asset selectedAsset;
+        private Asset selectedAsset; //veio da outra tela, o que foi selecionado
 
         public frmRequest(Asset selectedAsset)
         {
@@ -33,7 +33,7 @@ namespace primeiraProva.UI
 
         private void itensComboBox()
         {
-            comboBoxRequest.DataSource = ctx.Priorities.Select(x => x.Name).ToList();
+            comboBoxRequest.DataSource = ctx.Priorities.Select(x => x.Name).ToList(); //entrega os dados com DataSource, e filtra para que só selecione o Name de priority
             comboBoxRequest.SelectedIndex = -1;
         }
 
@@ -60,7 +60,7 @@ namespace primeiraProva.UI
                 return;
             }
 
-            var verificao = ctx.EmergencyMaintenances.Any(x => x.AssetID == selectedAsset.ID && x.EMEndDate == null);
+            var verificao = ctx.EmergencyMaintenances.Any(x => x.AssetID == selectedAsset.ID && x.EMEndDate == null); //o Any devolve um booleano
 
             if (verificao)
             {
@@ -68,7 +68,7 @@ namespace primeiraProva.UI
                 return;
             }
 
-
+            //esse bloco é responsável por bater as infos com o banco de dados, preencher a nova request.
             EmergencyMaintenance emMaintenance = new EmergencyMaintenance();
             emMaintenance.AssetID = selectedAsset.ID;
             emMaintenance.DescriptionEmergency = txtDescriptionOfEmergency.Text;
@@ -77,9 +77,9 @@ namespace primeiraProva.UI
             emMaintenance.EMStartDate = null;
             emMaintenance.EMEndDate = null;
             emMaintenance.EMTechnicianNote = null;
-            emMaintenance.PriorityID = ctx.Priorities.ToList().FirstOrDefault(x => x.Name == comboBoxRequest.SelectedItem.ToString()).ID;
+            emMaintenance.PriorityID = ctx.Priorities.ToList().FirstOrDefault(x => x.Name == comboBoxRequest.SelectedItem.ToString()).ID;//pega a prioridade que o usuario escolheu e bate com o banco de dados a partir do priorityId(número)
 
-
+            //confirma e realmente envia pro banco
             ctx.EmergencyMaintenances.Add(emMaintenance);
             ctx.SaveChanges();
 

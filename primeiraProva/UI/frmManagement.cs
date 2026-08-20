@@ -26,7 +26,7 @@ namespace primeiraProva.UI
             //FirstName && lastName = tabela Employees
             //Department Name = Departments
 
-            var assetsList = ctx.Assets.Where(x => x.EmergencyMaintenances.Any(a => a.EMReportDate != null)).ToList();
+            var assetsList = ctx.Assets.Where(x => x.EmergencyMaintenances.Any(a => a.EMReportDate != null)).ToList(); //só pega os dados de emergencyMaintenances quando a data de report for diferente de nula, porque eu só quero a lista dos assets onde teve um report.
             foreach (var assets in assetsList)
             {
                 var departmentName = assets.DepartmentLocation.Department.Name.ToString();
