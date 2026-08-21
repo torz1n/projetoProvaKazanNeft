@@ -18,11 +18,13 @@ namespace primeiraProva.UI
             var assetsList = ctx.Assets.ToList();
             foreach (var asset in assetsList)
             {
-                int numberClosedEMS = asset.EmergencyMaintenances.Where(b => b.EMEndDate != null).Count();
+                //int numberClosedEMS = asset.EmergencyMaintenances.Where(b => b.EMEndDate != null).Count();
+                int numberOfEMS = asset.EmergencyMaintenances.Count();
+
                 DateTime? lastClosedEMS = asset.EmergencyMaintenances.Max(b => b.EMEndDate);
                 string nameOfDepartment = asset.DepartmentLocation.Department.Name.ToString();
 
-                int numberRow = dgvMaintenanceManagement.Rows.Add(asset.AssetSN, asset.AssetName, lastClosedEMS == null ? 0.ToString() : lastClosedEMS.ToString()/*if ternário*/, numberClosedEMS.ToString());
+                int numberRow = dgvMaintenanceManagement.Rows.Add(asset.AssetSN, asset.AssetName, lastClosedEMS == null ? 0.ToString() : lastClosedEMS.ToString()/*if ternário*/, numberOfEMS.ToString());
                 
 
                 dgvMaintenanceManagement.Rows[numberRow].Tag = asset;

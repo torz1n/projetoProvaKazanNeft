@@ -1,6 +1,7 @@
 ﻿using primeiraProva.Models;
 using System;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace primeiraProva.UI
@@ -12,7 +13,11 @@ namespace primeiraProva.UI
             InitializeComponent();
 
             this.Text = "Emergency Maintenance Request Details";
-
+            if (selectedEM == null)
+            {
+                "Foi selecionada uma linha vazia!".Warning();
+                return;
+            }
             label4.Text = selectedEM.AssetSN;
             label5.Text = selectedEM.AssetName;
             label6.Text = selectedEM.DepartmentLocation.Department.Name.ToString();
@@ -52,6 +57,11 @@ namespace primeiraProva.UI
             //amount dando problema!
             var amount = ctx.ChangedParts.Select(x => x.Amount).ToList();
             numericUpDown4.Text = amount.ToString();
+
+            if (dtpStart.Value < selectedEM.EmergencyMaintenances.FirstOrDefault().EMReportDate)
+            {
+                btnSubmitDetails.Enabled = false;
+            }
         }
         
         private void label1_Click(object sender, EventArgs e)
@@ -91,7 +101,16 @@ namespace primeiraProva.UI
         {
 
         }
-       
-        
+
+        private void btnSubmitDetails_Click(object sender, EventArgs e)
+        {
+            "Documento Enviado!".Information();
+            //mexer no tabela changedparts do banco de dados, para enviar o que foi alterado
+        }
+
+        private void btnCancelDetails_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

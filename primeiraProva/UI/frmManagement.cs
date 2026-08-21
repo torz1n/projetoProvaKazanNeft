@@ -35,6 +35,7 @@ namespace primeiraProva.UI
                 var assetName = assets.AssetName.ToString();
                 var assetSn = assets.AssetSN.ToString();
 
+                
                 var addInTable = dgvManagement.Rows.Add(assetSn, assetName, reportDate, fullName, departmentName);
 
                 dgvManagement.Rows[addInTable].Tag = assets;
@@ -45,6 +46,12 @@ namespace primeiraProva.UI
         {
             var linhaSelecionada = dgvManagement.SelectedRows[0];
             var selectedEM = linhaSelecionada.Tag as Asset;//linha que foi selecionada e que vai ser salva para o próximo arquivo
+            
+            if (linhaSelecionada == null)
+            {   
+                
+            }
+
 
 
             new frmDetailsRequestMaintenance(selectedEM).Show();
