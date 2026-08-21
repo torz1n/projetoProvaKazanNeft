@@ -25,10 +25,7 @@ namespace primeiraProva.UI
             amount = changedparts
             action = link pra remover o que esta gravado na linha
              */
-            //var startDate = ctx.EmergencyMaintenances.FirstOrDefault(x => x.AssetID == selectedEM.ID);
-
-
-
+            
             //só ta pegando a data mais atual de 2019!! nao pega a de 2017!!!!!!!!!!!!!!!!!!!
 
 
@@ -55,20 +52,8 @@ namespace primeiraProva.UI
             //amount dando problema!
             var amount = ctx.ChangedParts.Select(x => x.Amount).ToList();
             numericUpDown4.Text = amount.ToString();
-
-            //
-            
-            
-
-
-
-            
-
-            
-            
-
-
         }
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -91,12 +76,22 @@ namespace primeiraProva.UI
 
         private void btnAddToListDetails_Click(object sender, EventArgs e)
         {
-            var adicionarLinhas = dgvDetails.Rows.Add(comboBoxPartNameDetails.Text, numericUpDown4.Text);
+            var adicionarLinhas = dgvDetails.Rows.Add(comboBoxPartNameDetails.Text, numericUpDown4.Text, linkLabel1.Text);
         }
 
+        private void dgvDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2 && e.ColumnIndex != -1)
+            {
+                var removerLinha = dgvDetails.Rows[e.RowIndex];
+                dgvDetails.Rows.Remove(removerLinha);
+            }
+        }
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
+       
+        
     }
 }
