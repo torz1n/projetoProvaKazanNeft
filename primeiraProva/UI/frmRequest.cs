@@ -60,13 +60,14 @@ namespace primeiraProva.UI
                 return;
             }
 
-            var verificao = ctx.EmergencyMaintenances.Any(x => x.AssetID == selectedAsset.ID && x.EMEndDate == null); //o Any devolve um booleano
+            // verificação removida porque ao pressionar o botão send emergency maintenance já faço essa verificação.
+            /*var verificao = ctx.EmergencyMaintenances.Any(x => x.AssetID == selectedAsset.ID && x.EMEndDate == null); //o Any devolve um booleano
 
             if (verificao)
             {
                 "Já existe uma solicitação aberta pra esse ativo!".Warning();
                 return;
-            }
+            }*/
 
             //esse bloco é responsável por bater as infos com o banco de dados, preencher a nova request.
             EmergencyMaintenance emMaintenance = new EmergencyMaintenance();

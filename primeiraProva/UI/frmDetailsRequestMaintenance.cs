@@ -106,6 +106,8 @@ namespace primeiraProva.UI
         {
             "Documento Enviado!".Information();
             //mexer no tabela changedparts do banco de dados, para enviar o que foi alterado
+
+
         }
 
         private void btnCancelDetails_Click(object sender, EventArgs e)

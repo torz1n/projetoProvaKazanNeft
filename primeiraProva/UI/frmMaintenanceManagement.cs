@@ -20,6 +20,7 @@ namespace primeiraProva.UI
             {
                 //int numberClosedEMS = asset.EmergencyMaintenances.Where(b => b.EMEndDate != null).Count();
                 int numberOfEMS = asset.EmergencyMaintenances.Count();
+                
 
                 DateTime? lastClosedEMS = asset.EmergencyMaintenances.Max(b => b.EMEndDate);
                 string nameOfDepartment = asset.DepartmentLocation.Department.Name.ToString();
@@ -41,6 +42,11 @@ namespace primeiraProva.UI
             var linhaSelecionada = dgvMaintenanceManagement.SelectedRows[0];//inclui o numero da coluna e pega os valores da linha
             var SelectedAsset = linhaSelecionada.Tag as Asset;
 
+            if (SelectedAsset.EmergencyMaintenances.Count() > 0)
+            {
+                "Já existem manutenções de emergência para este ativo!".Information();
+            }
+            else
             new frmRequest(SelectedAsset).Show();
         }
 
